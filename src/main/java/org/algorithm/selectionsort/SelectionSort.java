@@ -6,21 +6,19 @@ public class SelectionSort {
 
     public void sortWithSelection(Integer[] array) {
 
-            int n = array.length;
+        for (int i = 0; i < array.length - 1; i++) {
 
-            for (int i = 0; i < n-1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < array.length; j++)
+                if (array[j] < array[minIdx])
+                    minIdx = j;
 
-                int minIdx = i;
-                for (int j = i+1; j < n; j++)
-                    if (array[j] < array[minIdx])
-                        minIdx = j;
-
-                int temp = array[minIdx];
-                array[minIdx] = array[i];
-                array[i] = temp;
-            }
+            int temp = array[minIdx];
+            array[minIdx] = array[i];
+            array[i] = temp;
+        }
 
         Arrays.stream(array).forEach(System.out::println);
-        }
+    }
 
 }
