@@ -6,19 +6,24 @@ public class SelectionSort {
 
     public void sortWithSelection(Integer[] array) {
 
-        for (int i = 0; i < array.length -1 ; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
 
             int minIdx = i;
-            for (int j = i + 1; j < array.length; j++) {
+            for (int j = i; j < array.length; j++) {
                 if (array[j] < array[minIdx])
                     minIdx = j;
             }
-            int temp = array[minIdx];
-            array[minIdx] = array[i];
-            array[i] = temp;
+            swap(array, i, minIdx);
         }
 
-        Arrays.stream(array).forEach(System.out::println);
+    }
+
+    private void swap(Integer[] array, int index1, int index2) {
+
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+
     }
 
 }

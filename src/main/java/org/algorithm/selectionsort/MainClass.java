@@ -1,5 +1,7 @@
 package org.algorithm.selectionsort;
 
+import java.util.Arrays;
+
 public class MainClass {
 
 
@@ -9,6 +11,8 @@ public class MainClass {
         SelectionSort sort = new SelectionSort();
 
         sort.sortWithSelection(array);
+
+        System.out.println(Arrays.toString(array));
 
     }
 }
