@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class MainClass {
 
-
-
     public static void main(String[] args) {
 
         Integer[] arr = {50,7,2,20,4,14,13};
